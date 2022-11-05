@@ -1,39 +1,22 @@
 <template>
   <div class="main-container">
-    <SurveyView
-      v-show="!didSubmit"
-      :handle-submit="handleSubmit"
-      :handle-click="handleClick"
-    />
-    <ThanksView v-show="didSubmit" :selected="selected" />
+    <SurveyView v-show="!didSubmit" @submit="handleSubmit" />
+    <ThanksView v-show="didSubmit" />
   </div>
 </template>
 
-<script lang="ts">
-export default {
-  data() {
-    return {
-      selected: null as number,
-      didSubmit: false as boolean,
-    };
-  },
-  computed: {
-    errorMsg(): string {
-      return "Please rank us before submitting 🙂";
-    },
-  },
-  methods: {
-    handleSubmit(): void {
-      if (this.selected === null) {
-        alert(this.errorMsg);
-      } else {
-        this.didSubmit = true;
-      }
-    },
-    handleClick(e: { target: { value: number } }) {
-      alert(e);
-      this.selected = e.target.value;
-    },
-  },
+<script setup lang="ts">
+import useCounter from "./composables/composables";
+
+const { selected, didSubmit, toggleDidSubmit } = useCounter();
+
+const handleSubmit = (): void => {
+  if (selected.value === null) {
+    return alert(errorMsg);
+  } else {
+    toggleDidSubmit();
+  }
 };
+
+const errorMsg: string = "Please rank us before submitting 🙂";
 </script>

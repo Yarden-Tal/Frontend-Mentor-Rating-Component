@@ -1,43 +1,27 @@
 <template>
   <div class="survey-view">
-    <!-- Icon row -->
     <section class="star-icon-section">
       <div class="star-container">
-        <img src="" alt="star" />
+        <img src="../public/images/icon-star.svg" alt="star" />
       </div>
     </section>
-    <!-- Title row -->
     <section class="text-section">
       <h1>{{ title }}</h1>
       <p>{{ text }}</p>
     </section>
-    <!-- Numbers row - Flex -->
     <section class="nums-section">
-      <RankingButtons @clicked="handleClick" />
+      <RankingButtons />
     </section>
     <section>
-      <form @submit!.prevent="handleSubmit">
+      <form @submit.prevent="$emit('submit')">
         <button class="submit-btn" type="submit">SUBMIT</button>
       </form>
     </section>
   </div>
 </template>
 
-<script lang="ts">
-export default {
-  props: {
-    handleClick: {
-      type: Function,
-    },
-    handleSubmit: {},
-  },
-  computed: {
-    title(): string {
-      return "How did we do?";
-    },
-    text(): string {
-      return "Please let us know how we did with your support request. All feedback isappreciated to help us improve our offering!";
-    },
-  },
-};
+<script setup lang="ts">
+const title: string = "How did we do?";
+const text: string =
+  "Please let us know how we did with your support request. All feedback isappreciated to help us improve our offering!";
 </script>
