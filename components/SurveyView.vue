@@ -1,9 +1,9 @@
 <template>
   <div class="survey-view">
     <section class="star-icon-section">
-      <div class="star-container">
-        <img src="../public/images/icon-star.svg" alt="star" />
-      </div>
+      <span class="star-container">
+        <img src="/images/icon-star.svg" alt="star" />
+      </span>
     </section>
     <section class="text-section">
       <h1>{{ title }}</h1>
