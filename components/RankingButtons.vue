@@ -5,8 +5,8 @@
 </template>
 
 <script setup lang="ts">
-import useCounter from "../composables/composables";
-const { setSelected } = useCounter();
+import useForm from "../composables/composables";
+const { setSelected } = useForm();
 
 const handleClick = (num: number) => setSelected(num);
 

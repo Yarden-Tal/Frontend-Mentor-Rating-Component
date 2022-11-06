@@ -6,15 +6,19 @@
 </template>
 
 <script setup lang="ts">
-import useCounter from "./composables/composables";
+import { Ref } from "vue";
+import useForm from "./composables/composables";
 
-const { selected, didSubmit, toggleDidSubmit } = useCounter();
+onMounted(() => navigateTo("/"));
+
+const { selected } = useForm();
+const didSubmit: Ref<boolean> = ref(false);
 
 const handleSubmit = (): void => {
-  if (selected.value === null) {
-    return alert(errorMsg);
-  } else {
-    toggleDidSubmit();
+  if (selected.value === null) return alert(errorMsg);
+  else {
+    didSubmit.value = true;
+    navigateTo("/sent");
   }
 };
 

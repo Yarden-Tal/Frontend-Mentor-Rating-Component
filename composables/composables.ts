@@ -1,24 +1,15 @@
 import { ref } from "vue";
+import { UseFormProps } from "~~/ts/interfaces";
+const selected = ref<number>(null);
 
-const useCounter = () => {
-  const selected = ref<number>(null);
-  const didSubmit = ref<boolean>(false);
-
-  const setSelected = (newValue: number) => {
-    alert(selected.value);
-    selected.value = newValue + 1;
-    alert(selected.value);
-    nextTick();
-  };
-
-  const toggleDidSubmit = (): boolean => (didSubmit.value = !didSubmit.value);
+const useForm = (): UseFormProps => {
+  const setSelected = (newValue: number): number =>
+    (selected.value = newValue + 1);
 
   return {
     selected,
     setSelected,
-    didSubmit,
-    toggleDidSubmit,
   };
 };
 
-export default useCounter;
+export default useForm;

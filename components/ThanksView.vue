@@ -17,9 +17,9 @@
 
 <script setup lang="ts">
 import { ComputedRef } from "vue";
-import useCounter from "../composables/composables";
+import useForm from "../composables/composables";
 
-const { selected } = useCounter();
+const { selected } = useForm();
 
 const thanksTitle: string = "Thank you!";
 const thanksTxt: string =
