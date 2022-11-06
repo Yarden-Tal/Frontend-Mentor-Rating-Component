@@ -1,5 +1,6 @@
 <template>
   <button
+  :class="{ 'orange-bg' : num + 1 === selected}"
     class="ranking-btn"
     v-for="num in numsArray"
     :key="num"
@@ -11,7 +12,7 @@
 
 <script setup lang="ts">
 import useForm from "../composables/composables";
-const { setSelected } = useForm();
+const { selected, setSelected } = useForm();
 
 const handleClick = (num: number) => {
   setSelected(num);

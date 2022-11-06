@@ -61,11 +61,20 @@ $desktop: 1440px;
   border-color: transparent;
 }
 
+html {
+  overflow: hidden;
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
 body {
   background-color: $bg;
   font-family: $body-font-family;
   font-weight: $body-font-weight-regular;
 }
+
 .main-container {
   &__inner {
   }
@@ -117,5 +126,12 @@ body {
       }
     }
   }
+}
+
+
+/* For selected ranking button only */
+.orange-bg {
+  background-color: $orange !important;
+  color: $title-color !important;
 }
 </style>
