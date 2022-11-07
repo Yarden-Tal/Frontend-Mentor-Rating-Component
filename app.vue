@@ -61,6 +61,15 @@ $desktop: 1440px;
   border-color: transparent;
 }
 
+@mixin card-style {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $card-bg;
+  padding: 20px;
+  border-radius: 15px;
+}
+
 html {
   overflow: hidden;
   box-sizing: border-box;
@@ -73,16 +82,31 @@ body {
   background-color: $bg;
   font-family: $body-font-family;
   font-weight: $body-font-weight-regular;
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+}
+
+p {
+  font-size: $body-font-size;
+}
+
+#__nuxt {
+  margin: auto auto;
 }
 
 .main-container {
+  display: flex;
+  justify-content: space-between;
+  width: 335px;
   &__inner {
+    min-height: 305px;
+    height: 100%;
+    @include card-style;
   }
 }
 .survey-view {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   background-color: $card-bg;
   .star-icon-section {
     & .star-container {
@@ -117,13 +141,42 @@ body {
   & form {
     width: 100%;
     .submit-btn {
+      @include btn-radius;
+      letter-spacing: 1px;
+      width: 100%;
       background-color: $orange;
       color: $title-color;
       padding: 3px 40px;
-      @include btn-radius;
+      font-size: 12px;
       cursor: pointer;
       &:hover {
+        background-color: $title-color;
+        color: $orange;
       }
+    }
+  }
+}
+
+.thanks-view {
+  /* @include card-style; */
+  
+  text-align: center;
+  & .img-section {
+
+  }
+  & .choice-section {
+    & > span {
+      background-color: $star-bg;
+      @include btn-radius;
+      color: $orange;
+    }
+  }
+  & .txt-section {
+    & > h2 {
+      color: $title-color;
+    }
+    & > p {
+      color: $txt-color;
     }
   }
 }

@@ -6,7 +6,9 @@
       </div>
     </section>
     <section class="choice-section">
-      {{ selectionTxt }}
+      <span>
+        {{ selectionTxt }}
+      </span>
     </section>
     <section class="txt-section">
       <h2>{{ thanksTitle }}</h2>
