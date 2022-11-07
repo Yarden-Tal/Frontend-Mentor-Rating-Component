@@ -1,2 +1,12 @@
-// https://v3.nuxtjs.org/api/configuration/nuxt.config
-export default defineNuxtConfig({});
+const routerBase =
+  process.env.DEPLOY_ENV === 'GH_PAGES'
+    ? {
+        router: {
+          base: '/nuxt-app/'
+        }
+      }
+    : {}
+
+export default {
+  ...routerBase
+}
