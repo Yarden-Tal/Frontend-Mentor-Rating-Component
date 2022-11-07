@@ -2,7 +2,7 @@
   <div class="survey-view">
     <section class="star-icon-section">
       <span class="star-container">
-        <img src="/images/icon-star.svg" alt="star" />
+        <img src="/images/icon-star.svg" alt="Star" />
       </span>
     </section>
     <section class="text-section">

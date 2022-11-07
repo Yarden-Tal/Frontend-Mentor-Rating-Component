@@ -2,7 +2,7 @@
   <div class="thanks-view">
     <section class="img-section">
       <div class="img-wrapper">
-        <img src="images/illustration-thank-you.svg" alt="Sent" />
+        <img src="/images/thank-you.svg" alt="Sent" />
       </div>
     </section>
     <section class="choice-section">
