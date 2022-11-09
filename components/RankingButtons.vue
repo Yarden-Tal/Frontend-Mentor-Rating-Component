@@ -1,13 +1,16 @@
 <template>
+  <div class="ranking-btn-container"
+  v-for="num in numsArray"
+  :key="num"
+  @click="handleClick(num)"
+  >
   <button
   :class="{ 'orange-bg' : num + 1 === selected}"
-    class="ranking-btn"
-    v-for="num in numsArray"
-    :key="num"
-    @click="handleClick(num)"
-  >
-    {{ num + 1 }}
+  class="ranking-btn"
+    >
+      {{ num + 1 }}
   </button>
+  </div>
 </template>
 
 <script setup lang="ts">
