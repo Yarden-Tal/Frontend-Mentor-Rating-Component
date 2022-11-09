@@ -18,7 +18,7 @@ const didSubmit: Ref<boolean> = ref(false);
 
 const handleSubmit = (): void => {
   if (selected.value === null) return alert(errorMsg);
-  else submit();
+  submit();
 };
 
 const submit = (): void => {
@@ -134,7 +134,7 @@ section {
       flex-direction: column;
       align-items: center;
       background-color: $star-bg;
-      padding: 9px;
+      padding: 12px 9px;
       @include btn-radius;
       & img {
         width: 75%;
@@ -198,9 +198,6 @@ section {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  & .img-section {
-
-  }
   & .choice-section {
     & > span {
       background-color: $star-bg;
@@ -219,8 +216,7 @@ section {
   }
 }
 
-
-/* For selected ranking button only */
+/* For *selected* ranking button */
 .orange-bg {
   background-color: $orange !important;
   color: $title-color !important;

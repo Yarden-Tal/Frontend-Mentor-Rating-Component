@@ -13,8 +13,8 @@
       <RankingButtons />
     </section>
     <section class="form-section">
-      <form @submit.prevent="$emit('submit')">
-        <button class="submit-btn" type="submit">SUBMIT</button>
+      <form>
+        <button @click.prevent="$emit('submit')" class="submit-btn" type="submit">SUBMIT</button>
       </form>
     </section>
   </div>
